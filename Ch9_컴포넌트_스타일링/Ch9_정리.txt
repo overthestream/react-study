@@ -1,0 +1,18 @@
+# 일반 CSS
+  CSS 클래스를 중복되지 않게 이름짓기
+  컴포넌트이름-클래스 이런 식의 규칙 
+  or 
+  CSS Selector 
+    CSS 클래스 이름을 
+    .컴포넌트명 .클래스명 
+    .컴포넌트명 태그명 
+    이런식으로 지으면 자동으로 중복없이 셀렉팅됨 
+# Sass (Syntatically Awesome Style Shrrts)
+  .sass (중괄호와 세미콜론 X) | .scss (CSS와 비슷) 
+  사용시 리액트 디렉터리에서 yarn add node-ass 해야함 
+  ex -> Sass.scss 
+# CSS Module
+  CSS Module은 CSS를 불러와서 사용할 때 클래스 이름을 고유한 값, 즉 [파일명]_[클래스명]_[해시값]형태로 자동으로 만들어서 컴포넌트 스타일 클래스 이름 중첩을 방지
+# CSS-in_JS
+  JS 파일 안에 스타일 선언 
+  
