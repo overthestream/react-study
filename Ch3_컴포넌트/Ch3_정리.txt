@@ -100,4 +100,47 @@
         name: 'default'
       }
     이런 식도 가능 
+
 # state 
+  컴포넌트 내부에서 바뀔 수 있는 값 (props는 read - only)
+  > 클래스형 컴포넌트 : state
+    ../hello-react/src/Counter.js
+    constructor 메소드 이용 
+      super(props) 필수 
+      props에서 dot 빼기 처럼 JSX 전에 빼 주기 
+    다른 방법 
+      그냥
+        state = {
+          number: 0
+        }
+      이것만 해도 됨
+    this.setState 한 이벤트 처리에서 setState를 여러번 한다고 해서 바로바로 반영되는 것이 아님 
+      -> 객체 대신 함수를 인자로 넣기
+        this.setState((prevState,props) => {
+          return {
+            number: prevState.number + 1
+          }
+        })
+    setState 끝난 후 특정 작업 실행하기 (콜 백 함수)
+      this.setState(
+        (prevState, props) => {
+          return {
+            number: prevState.number +1
+          }
+        },
+        () => {
+          console.log('number++')
+        }
+      )
+  > 함수형 컴포넌트 : useState 함수  
+    ../hello-react/src/Say.js
+    Hooks + useState
+    # 배열 비구조화 할당 
+        const array = [1, 2]
+        const [one, two] = array
+      이렇게 하면 one === array[0], two === array[1]
+      props, state 와 같다 ~  
+    useState 함수의 인자에는 state의 초깃값을 넣어준다. 여기서는 굳이 객체가 아니어도 됨
+    함수 호출 시 배열이 반환되는데, 첫번째 요소는 state, 두번쨰 요소는 setter 함수 
+    여러 번 사용해라 이말이죠
+  클래스든 함수든 state 사용 시 setter 함수를 사용할 것 
